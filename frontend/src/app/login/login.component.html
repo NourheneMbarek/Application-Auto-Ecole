@@ -1,0 +1,68 @@
+
+	<!-- Breadcrumb -->
+	<div class="bg1 p-t-29 p-b-29">
+		<div class="container">
+			<div class="flex-w">
+				<span>
+					<a href="index-2.html" class="s-txt21 hov-color-main trans-02">
+						<i class="fa fa-home"></i>
+						Home
+					</a>
+					<span class="s-txt21 p-l-6 p-r-9">/</span>
+				</span>
+				
+				<span>
+					<span class="s-txt21">
+						Connexion
+					</span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Content page -->
+	<section class="p-t-65 p-b-60">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-5 p-b-50 content-center" >
+					<div>
+						<h3 class="m-txt28 rs1-color p-b-40">
+							Connexion
+						</h3>
+
+						<form [formGroup]="loginGroup" id="contact-form" class="flex-w flex-sb validate-form" method="post"  name="contact" (ngSubmit)="login()" >
+							
+
+							<div class="col-md-12 size25 w-full-lg m-b-20 validate-input" data-validate = "Valid email is: ex@abc.xyz">
+								<input class="s-txt31 size-full cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18" type="email" formControlName="email" [(ngModel)]="user.email" placeholder="Votre Email" required>
+							</div>
+
+							<div class="col-md-12 size25 w-full-lg m-b-20">
+								<input class="s-txt31 size-full cl-ph-1 bo6 input-focus-1 bo-rad-2 p-l-18 p-r-18" type="password" formControlName="password" [(ngModel)]="user.password" placeholder="Votre mot de passe" required>
+							</div>
+							
+
+              
+              
+ 
+
+							<div>
+								<!-- Button -->
+								<button [disabled]="!loginGroup.valid" class="btn btn-primary"  type="submit"  [routerLink]="['/admin/user']" >
+									Connexion
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Map -->
+	<div class="map">
+		<div class="contact-map h-size1" id="google_map" data-map-x="40.648578" data-map-y="-73.962730" data-pin="/assets/images/icons/favicon.png" data-scrollwhell="0" data-draggable="1"  data-zoom="15"></div>
+	</div>

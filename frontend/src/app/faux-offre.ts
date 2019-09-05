@@ -1,0 +1,27 @@
+export let Offre = [
+    {id:1,
+        nom_offre:"FORFAIT CODE + CONDUITE" ,
+        description : "Forfait code illimité 6 mois,Frais d accompagnement au permis" ,
+        prix :"450D" , 
+        image:"asset/images/news-01.jpg" ,
+        date_debut :    new Date('02/21/2019') ,
+        date_fin : new Date('03/05/2019') ,
+        
+        is_new :   true},
+    {id:2,
+     nom_offre:"FORFAIT CODE SEUL" ,
+    description :"Forfait code illimité 6 mois" ,
+    prix :  "250D" , 
+    image :"asset/images/news-02.jpg" ,
+    date_debut :       new Date('02/22/2019') , 
+    date_fin :new Date('04/26/2019') ,
+    is_new :   true},
+    {id:3,
+        nom_offre:"FORFAIT CONDUITE SEULE" ,
+        description : "valuation obligatoire (45 minutes),20 leçons de conduite,Fourniture pédagogique" ,
+        prix : "500D" , 
+        image :"asset/images/news-03.jpg" ,
+        date_debut :   new Date('02/21/2019') , 
+        date_fin :new Date('05/25/2019') ,
+        is_new :   true}
+  ];

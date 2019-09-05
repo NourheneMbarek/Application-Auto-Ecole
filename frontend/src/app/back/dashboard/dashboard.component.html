@@ -1,0 +1,53 @@
+
+<div class="form-group">
+  <hr>
+    <label class="tp-caption tp-resizeme txt1 txt-center " style ="color: darkgoldenrod;">Ajouter Voitures </label>
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="matricule" placeholder="matricule" required>
+  </div>
+  <br>
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="nom" placeholder="nom" required>
+  </div>
+  <br>
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="description" placeholder="description" required>
+  </div>
+  <br>
+
+ 
+ 
+</div>
+
+<button class="btn btn-primary"  type="submit" (click)="ajouter()">Ajouter Moniteurs</button>
+
+<input type="text" (keyup)="search($event.target.value)">
+<br>
+<table class="table" style="width : 70%">
+<tr>
+  <th>
+   <a (click)="sort()"> Matricule</a>
+  </th>
+  <th>
+    Nom
+  </th>
+  <th>
+   Description 
+  </th>
+  <th>
+    Actions
+  </th>
+</tr>
+<tr *ngFor="let user of users">
+  <td>{{user.matricule}}</td>
+  <td>{{user.nom}}</td>
+  <td>{{user.description}}</td>
+
+  <td><button class="btn btn-warning" [routerLink]="['/admin/voituresedit',user.id]">Editer</button>
+    <button class="btn btn-danger" (click)="delete(user)">Supprimer</button>
+  </td>
+</tr>
+
+
+
+</table>

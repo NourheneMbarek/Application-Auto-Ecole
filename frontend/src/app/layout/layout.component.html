@@ -1,0 +1,214 @@
+<header>
+  <!-- Header desktop -->
+  <div class="container-menu-desktop">
+    <div class="top-bar bg-main">
+      <div class="container">
+        <div class="content-topbar">
+         
+
+          <div class="right-top-bar">
+            <span>
+              <i class="icon_phone" aria-hidden="true"></i>
+              <span>{{data.tel}}</span>
+            </span>
+
+            <span>
+              <i class="icon_pin" aria-hidden="true"></i>
+              <span>{{data.adresse}}</span>
+            </span>
+
+            <span>
+              <i class="icon_clock" aria-hidden="true"></i>
+              <span>09:30 am – 06:00 pm</span>
+            </span>
+            <div *ngIf="isloggin">
+              <span>
+                <i class="icon_clock" aria-hidden="true"></i>
+                <span style="color : #fff">{{user.email}}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+
+    <div class="wrap-menu-desktop">
+      <div class="limiter-menu-desktop">
+        
+        <!-- Logo desktop -->		
+        <a href="index-2.html" class="logo">
+          <img src="assets/images/icons/logo.png" alt="IMG-LOGO">
+        </a>
+ 
+        <!-- Menu desktop -->
+        <div class="menu-desktop">
+          <ul class="main-menu">
+           
+            <li>
+              <a [routerLink]="['']">Accueil</a>
+              
+            </li>
+            <li>
+              <a [routerLink]="['/offres']">Offres</a>
+              
+            </li>
+
+            <li>
+              <a [routerLink]="['/annonces']">Annonces</a>
+            </li>
+
+            
+            <li class="respon-sub-menu">
+              <a [routerLink]="['/contact']" >Contact</a>
+            </li>
+
+            <li class="respon-sub-menu">
+              <a [routerLink]="['/login']" >Connexion</a>
+            </li>
+
+            <li class="respon-sub-menu">
+              <a [routerLink]="['/register']" >Inscription</a>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Social desktop -->
+        <div class="social">
+          <a href="#"><i class="fa fa-facebook m-l-13" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-twitter m-l-18" aria-hidden="true"></i></a>
+        </div>
+        
+      </div>
+    </div>	
+  </div>
+
+
+ 
+    
+
+    <!-- Button show menu -->
+    <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
+      <span class="hamburger-box">
+        <span class="hamburger-inner"></span>
+      </span>
+    </div>
+      
+  
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="bg4 p-t-25">
+  <div class="container p-b-60">
+    <div class="row">
+      <div class=" col-sm-12 col-lg-3 p-t-30">
+        <div class="w-full wrap-pic-max-w">
+          <a href="index-2.html"><img src="/assets/images/icons/logo-02.png" alt="LOGO"></a>
+        </div>
+
+        <p class="s-txt9 p-t-30">
+          Notre équipe dynamique vous accueille dans des locaux sympathiques et vous propose la formation au code de la route, au permis de conduire  ainsi qu'à la conduite accompagnée.
+        </p>
+      </div>
+      
+      <div class=" col-sm-6 col-lg-3 p-t-30">
+        <h4 class="m-txt12 p-t-14">
+          Agence
+        </h4>
+
+        <div class="wrap-link-footer p-t-28">
+          <ul class="col-left">
+            <li><a href="#">Acceuil</a></li>
+            <li><a href="#">Offres</a></li>
+            <li><a href="#">Annonces</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+
+          <!--<ul class="col-right">
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">404 page</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Elements</a></li>
+            <li><a href="#">Typography</a></li>
+          </ul>-->
+        </div>
+      </div>
+
+      <div class=" col-sm-6 col-lg-3 p-t-30">
+        <h4 class="m-txt12 p-t-14">
+          CONTACTEZ NOUS
+        </h4>
+
+        <ul class="contact-footer p-t-28">
+          <li>
+            <i class="fa fa-home" aria-hidden="true"></i>
+            {{data.adresse}}
+          </li>
+
+          <li>
+            <i class="fa fa-phone" aria-hidden="true"></i>
+            {{data.tel}}
+          </li>
+
+          <li>
+            <i class="fa fa-fax" aria-hidden="true"></i>
+            {{data.fax}}
+          </li>
+
+          <li>
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            contact@site.com
+          </li>
+
+          <li>
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            Lundi-Vendredi 09:00 - 17:00
+          </li>
+        </ul>
+      </div>
+
+      <div class=" col-sm-6 col-lg-3 p-t-30">
+        <h4 class="m-txt12 p-t-14">
+          Galerie
+        </h4>
+
+        <div class="wrap-gallery-footer p-t-35">
+          <a class="item-gallery-footer wrap-pic-w" href="/assets/images/gallery-footer-01.jpg" data-lightbox="gallery-footer">
+            <img src="/assets/images/gallery-footer-01.jpg" alt="GALLERY">
+          </a>
+
+          <a class="item-gallery-footer wrap-pic-w" href="/assets/images/gallery-footer-02.jpg" data-lightbox="gallery-footer">
+            <img src="/assets/images/gallery-footer-02.jpg" alt="GALLERY">
+          </a>
+
+          <a class="item-gallery-footer wrap-pic-w" href="/assets/images/gallery-footer-03.jpg" data-lightbox="gallery-footer">
+            <img src="/assets/images/gallery-footer-03.jpg" alt="GALLERY">
+          </a>
+
+          <a class="item-gallery-footer wrap-pic-w" href="/assets/images/gallery-footer-04.jpg" data-lightbox="gallery-footer">
+            <img src="/assets/images/gallery-footer-04.jpg" alt="GALLERY">
+          </a>
+
+          <a class="item-gallery-footer wrap-pic-w" href="/assets/images/gallery-footer-05.jpg" data-lightbox="gallery-footer">
+            <img src="/assets/images/gallery-footer-05.jpg" alt="GALLERY">
+          </a>
+
+          <a class="item-gallery-footer wrap-pic-w" href="/assets/images/gallery-footer-06.jpg" data-lightbox="gallery-footer">
+            <img src="/assets/images/gallery-footer-06.jpg" alt="GALLERY">
+          </a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="bg3 txt-center p-t-19 p-b-16">
+    <span class="s-txt10">@ 2019 2DNI2.</span>
+    <a href="https://themeforest.net/cart/add_items?item_ids=21207623" class="dis-inline s-txt11 hov-color-white trans-04">Get The Template</a>
+  </div>
+</footer>
+
+
+
+

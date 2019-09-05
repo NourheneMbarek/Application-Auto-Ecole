@@ -1,0 +1,160 @@
+<br>
+<button type="button" class="btn-drive size1 m-txt1 bg-main bo-rad-4 trans-03" data-toggle="modal" data-target="#e123">
+  Planifier
+</button>
+<br>
+
+
+<div class="modal fade" id="e123" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> 
+        <div class="modal-body">
+          <label>Moniteurs</label>
+          <select [(ngModel)]="moniteur" class="form-control" (change)="check()">
+            <option *ngFor="let moniteur of liste_moniteurs" value="{{moniteur.id}}">{{moniteur.nom}} {{moniteur.prenom}}</option>
+          </select> 
+          <label>Voitures</label>
+          <select [(ngModel)]="voiture" class="form-control">
+            <option *ngFor="let voiture of liste_voitures" value="{{voiture.id}}">{{voiture.model_id}}</option>
+          </select>
+          <label>Candidats</label>
+          <select [(ngModel)]="candidat" class="form-control"> 
+            <option *ngFor="let candidat of liste_candidats" value="{{candidat.id}}">{{candidat.nom}}</option>
+         
+          </select>
+          <select [(ngModel)]="type" class="form-control">
+            <option  value="conduite">Conduite</option>
+            <option  value="code">Code</option>
+            <option  value="examen">Examen</option>
+         
+          </select>
+          <div class="row col-md-12">
+            <div class="col-md-6">
+              <label>Date</label>
+              <input type="date" [(ngModel)]="date_seance" class="form-control" (change)="check()">
+            </div>
+            <div class="col-md-6">
+              <label>Heurs</label>
+                <select [(ngModel)]="heur_seance" class="form-control" (change)="check()">
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                  </select>
+            </div>
+          </div>
+        </div>
+
+        <b style="color : rgba(255, 0, 0, 0.801) " *ngIf="exist">Seance existe</b>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="save()" [disabled]="exist">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table class="table">
+    <tr>
+      <th></th>
+      <th>9h</th>
+      <th>10h</th>
+      <th>11h</th>
+      <th>12h</th>
+      <th>14h</th>
+      <th>15h</th>
+      <th>16h</th>
+      <th>17h</th>
+
+    </tr>
+    <tr *ngFor="let jour of emplois">
+      <td>{{jour.date}}</td>
+      <td *ngFor="let seance of jour.seance">
+        <p *ngFor="let s of seance.liste" [style.background]="s.type == 'conduite' ? '#8bc34a33' : '#83a9f445'"> {{s.nom_m}} {{s.prenom_m}} | {{s.nom_c}} {{s.prenom_c}} </p>
+      </td>
+
+    </tr>
+
+
+
+
+
+  </table>
+
+
+  <table class="table">
+    <tr>
+      <th></th>
+      <th>04 - mars</th>
+      <th>05 - mars</th>
+      <th>06 - mars</th>
+      <th>07 - mars</th>
+      <th>08 - mars</th>
+    </tr>
+    <tr>
+      <td>9h - 10h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>10h - 11h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>11h - 12h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>14h - 15h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>15h - 16h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>16h - 17h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>17h - 18h</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    
+    </table>

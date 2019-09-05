@@ -1,0 +1,35 @@
+      <div>
+        <h5 class="modal-title" id="exampleModalLabel">Editer</h5>
+        
+      </div> 
+      <div class="modal-body" *ngFor="let user of users ; let i = index;" >
+          
+            
+        <div class="input-group" >
+          <input class="form-control" [(ngModel)]="nom"  value="Mickey" placeholder={{user.nom}}  >
+        </div>
+        <br>
+        <div class="input-group">
+          <input class="form-control" [(ngModel)]="prenom" placeholder={{user.prenom}} >
+        </div>
+        <br>
+        <div class="input-group">
+          <input class="form-control" [(ngModel)]="edit_type" placeholder={{user.type}} >
+        </div>
+        <br>
+        <div class="input-group">
+          <input class="form-control" [(ngModel)]="edit_code_valide" placeholder={{user.code_valide}} >
+        </div>
+        <br>
+        <div class="input-group">
+          <input class="form-control" [(ngModel)]="edit_nb_heurs" placeholder={{user.nb_heurs}} >
+        </div>
+
+       
+      </div>
+
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary"  (click)="update(ind)" [routerLink]="['/admin/users']">Sauvgarder les modifications</button>
+      </div>
+ <!--[routerLink]="['/admin/users']"-->

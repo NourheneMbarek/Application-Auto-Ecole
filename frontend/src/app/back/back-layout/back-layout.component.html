@@ -1,0 +1,62 @@
+<nav class="navbar" style="font-size:2em;">
+  
+  <div (click)="animate()" >Tableau de bord</div>
+
+  <div class="content-topbar">
+         
+
+    <div class="right-top-bar">
+     <!-- <span>
+        <i class="icon_phone" aria-hidden="true"></i>
+        <span>{{data.tel}}</span>
+      </span>
+
+      <span>
+        <i class="icon_pin" aria-hidden="true"></i>
+        <span>{{data.adresse}}</span>
+      </span>
+
+      <span>
+        <i class="icon_clock" aria-hidden="true"></i>
+        <span>09:30 am – 06:00 pm</span>
+      </span>-->
+      <div *ngIf="isloggin">
+        <span>
+          <i class="icon_clock" aria-hidden="true"></i>
+          <span style="color : #fff">{{user.email}}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  </nav>
+
+
+<div class="col-md-3" [@sidebaranimate]="isOpen ? 'open' : 'closed'" style="
+height: -webkit-fill-available; float:left;background-color : rgb(8, 7, 78)">
+ 
+  <div class="container" style="color: #ddd; font-size: 1.5em;" >
+
+        <hr>
+        <div class="row" [routerLink]="['/admin/users']" >
+            Candidats
+        </div>
+        <hr>
+        <div class="row" [routerLink]="['/admin/moniteurs']">
+            Moniteurs
+        </div> 
+        <hr>
+        <div class="row" [routerLink]="['/admin/voitures']">
+            Voitures
+        </div>
+        <hr>
+        <div class="row" [routerLink]="['/admin/seances']">
+            Seances
+        </div>
+
+  </div>
+  
+</div>
+
+<div class="col-md-8" style="float : left">
+  <router-outlet></router-outlet>
+</div>

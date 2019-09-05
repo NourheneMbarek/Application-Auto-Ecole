@@ -1,0 +1,29 @@
+<div>
+    <h5 class="modal-title" id="exampleModalLabel">Editer</h5>
+    
+  </div> 
+  <div class="modal-body" *ngFor="let user of users ; let i = index;" >
+       
+        
+    <div class="input-group" >
+      <input class="form-control" [(ngModel)]="nom" placeholder={{user.nom}} required>
+    </div>
+    
+    <div class="input-group">
+      <input class="form-control" [(ngModel)]="prenom" placeholder={{user.prenom}} required>
+    </div>
+
+    <div class="input-group">
+      <input class="form-control" [(ngModel)]="edit_cin" placeholder={{user.cin}} required>
+    </div>
+    <div class="input-group">
+      <input class="form-control" [(ngModel)]="edit_matricule" placeholder={{user.matricule}} required>
+    </div>
+  </div>
+
+  <b style="color : rgba(255, 0, 0, 0.801) " *ngIf="exist">Seance existe</b>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary"  (click)="update(ind)" >Sauvgarder les modifications</button>
+  </div>
+
+ <!--[routerLink]="['/admin/moniteurs']"-->

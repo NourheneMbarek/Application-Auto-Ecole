@@ -1,0 +1,77 @@
+<!-- Title page -->
+<section class="bg-img-1 bg-overlay-3 p-t-93 p-b-95" style="background-image: url('/assets/images/bg-title-01.jpg');">
+  <div class="container">
+    <div class="flex-w flex-sb-m">
+      <div class="p-t-10 p-b-10 p-r-30">
+        <div class="flex-w p-b-9">
+          <span>
+            <a href="index-2.html" class="s-txt19 hov-color-main trans-02">
+              <i class="fa fa-home"></i>
+              Acceuil
+            </a>
+            <span class="s-txt19 p-l-6 p-r-9">/</span>
+          </span>
+
+          <span>
+            <span class="s-txt19">
+              Annonces
+            </span>
+          </span>
+        </div>
+
+        <h2 class="m-txt6 respon1">
+          Annonces
+        </h2>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<div class="bgwhite p-t-60 p-b-85">
+  <div class="container">
+    <div class="p-b-44">
+    
+    </div>
+    
+    <div class="row isotope-grid">
+      <!-- - -->
+      <div *ngFor="let annonce of annonces ; let i = index;" class="col-sm-6 col-lg-4 p-b-45 isotope-item driving-dr experience-dr lessons-dr">
+        <!-- Block 4 class="wrap-pic-b4 wrap-pic-w hov5" -->
+        <div class="block-4">
+            <div class="wrap-pic-b4 wrap-pic-w hov5 " >
+								<a   [routerLink]="['/detail/3']" >  
+								<img src="/assets/images/course-07.jpg" alt=""></a>
+						</div>
+
+          <div class="wrap-text-b4 p-t-23" >
+            <a href="blog-single.html"><h4 class="m-txt8 hov-color-main trans-04 m-b-17">
+              {{annonce.nom_annonce}}
+            </h4></a>
+
+            <span class="s-txt7">July 18, 2017 | </span>
+            
+            <span class="s-txt7">{{annonce.prix}}</span>
+
+            <p class="s-txt2 p-t-11 p-b-22">
+              {{annonce.description}}
+               </p>
+
+            <div class="wrap-btn-b4 flex-w">
+              <!-- Button -->
+              <a href="blog-single.html" class="btn-drive m-txt10 size8 bo3 bg1 hov-color-white bo-rad-4">
+                Details
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    
+    <!-- Pagination -->
+   
+  </div>
+</div>

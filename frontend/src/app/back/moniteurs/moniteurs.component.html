@@ -1,0 +1,59 @@
+
+<div class="form-group">
+  <hr>
+    <label  class="tp-caption tp-resizeme txt1 txt-center " style ="color: darkgoldenrod;" >Ajouter Moniteurs </label>
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="nom" placeholder="Nom" required>
+  </div>
+  <br>
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="prenom" placeholder="Prenom" required>
+  </div>
+  <br>
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="cin" placeholder="cin" required>
+  </div>
+  <br>
+  <div class="input-group">
+    <input class="form-control" [(ngModel)]="matricule" placeholder="matricule" required>
+  </div>
+ 
+ 
+</div>
+
+<button class="btn btn-primary"  type="submit" (click)="ajouter()">Ajouter Moniteurs</button>
+
+<input type="text" (keyup)="search($event.target.value)" class="form-control">
+<br>
+<table class="table" style="width : 90%">
+<tr>
+  <th>
+   <a (click)="sort()"> Nom </a>
+  </th>
+  <th>
+    Prenom
+  </th>
+  <th>
+    CIN
+  </th>
+  <th>
+    Matricule 
+  </th>
+  <th>
+    Actions
+  </th>
+</tr>
+<tr *ngFor="let user of users ; let i = index;">
+  <td>{{user.nom}}</td>
+  <td>{{user.prenom}}</td>
+  <td>{{user.cin}}</td>
+  <td>{{user.matricule}}</td>
+
+  <td><button class="btn btn-warning" [routerLink]="['/admin/moniteursedit',user.id]" >Editer</button>
+    <button class="btn btn-danger" (click)="delete(user)">Supprimer</button>
+  </td>
+</tr> 
+
+
+
+</table>
